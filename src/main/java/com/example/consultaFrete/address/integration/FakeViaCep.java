@@ -1,7 +1,10 @@
 package com.example.consultaFrete.address.integration;
 
+import org.springframework.stereotype.Component;
+
 import com.example.consultaFrete.address.Address;
 
+@Component("mockViaCep")
 public class FakeViaCep implements ViaCepDAO{
 
     @Override
