@@ -9,7 +9,7 @@ public class DefaultDeliveryFeeCalculator implements DeliveryFeeCalculator {
     
     private final HashMap<Region, Double> prices = new HashMap<>();
 
-    DefaultDeliveryFeeCalculator() {
+    public DefaultDeliveryFeeCalculator() {
         prices.put(Region.NORTE, 20.83);
         prices.put(Region.NORDESTE, 15.98);
         prices.put(Region.SUDESTE, 7.85);
