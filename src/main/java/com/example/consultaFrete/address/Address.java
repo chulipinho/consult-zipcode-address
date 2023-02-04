@@ -1,5 +1,6 @@
 package com.example.consultaFrete.address;
 
+import com.example.consultaFrete.types.State;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +14,7 @@ public class Address {
     @Getter private String complement;
     @Getter private String district;
     @Getter private String city;
-    @Getter private String state;
+    @Getter private State state;
     
     public Address(
         @JsonProperty("cep") String zipcode, 
@@ -28,6 +29,6 @@ public class Address {
         this.complement = complement;
         this.district = district;
         this.city = city;
-        this.state = state;
+        this.state = State.fromUF(state);
     }
 }
