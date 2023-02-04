@@ -1,13 +1,13 @@
 Feature: Payload
 
-  Scenario: The user enters <scenario>
+  Scenario: the user enters <scenario>
     When the user enters a zipcode <zipcode>
     Then the API must <api>
     And return <return>
 
     Examples: 
       | scenario                           | zipcode                    | api                  | return                           |
-      | null value                         | ""                         | throw an exception   | a badRequest status code         |
+      | a null value                       | ""                         | throw an exception   | a badRequest status code         |
       | valid formatted                    | "35700-000"                | find the address     | it along with the delivery price |
       | a valid non-formatted              | "35700000"                 | find the address     | it along with the delivery price |
       | an invalid formatted               | "00000-000"                | not find the address | a zipcode not found message      |

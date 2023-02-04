@@ -14,6 +14,6 @@ import io.cucumber.spring.CucumberContextConfiguration;
 @SpringBootTest(classes = { ConsultaFreteApplication.class,
                             CucumberUT.class },
                 webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@CucumberOptions(plugin = {"pretty"}, tags = "", features = "src/test/resources")
+@CucumberOptions(plugin = {"pretty"}, tags = "", features = "src/test/resources/features")
 public class CucumberUT {
 }

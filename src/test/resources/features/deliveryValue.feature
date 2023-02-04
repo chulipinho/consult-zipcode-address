@@ -5,4 +5,4 @@ Feature: Delivery value
       | cep         | logradouro    | complemento  | bairro | localidade  | uf   | ibge      | gia    | ddd  | siafi  |
       | "01001-000" | "Praça da Sé" | "lado ímpar" | "Sé"   | "São Paulo" | "SP" | "3550308" | "1004" | "11" | "7107" |
     When the calculate method is called
-    Then the class must return 7.85
+    Then it must return 7.85

@@ -1,10 +1,12 @@
 package com.example.consultaFrete.address;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
     @Getter private String zipcode;
     @Getter private String street;
