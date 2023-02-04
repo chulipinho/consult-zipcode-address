@@ -15,7 +15,7 @@ public class AddressService {
         this.viaCepDAO = viaCepDAO;
     }
 
-    public Address getAddress(String zipcode) {
+    private Address getAddress(String zipcode) {
         return viaCepDAO.getZipcodeInformation(zipcode);
     }
 }
