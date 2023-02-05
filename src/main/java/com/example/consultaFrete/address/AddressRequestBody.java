@@ -3,14 +3,12 @@ package com.example.consultaFrete.address;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressRequestBody {
     @Getter 
-    @NotBlank
     @Size(max = 8, message = "Por favor insira um CEP válido")
     private String cep;
 
