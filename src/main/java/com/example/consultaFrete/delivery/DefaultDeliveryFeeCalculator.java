@@ -2,9 +2,12 @@ package com.example.consultaFrete.delivery;
 
 import java.util.HashMap;
 
+import org.springframework.stereotype.Component;
+
 import com.example.consultaFrete.types.Region;
 import com.example.consultaFrete.types.State;
 
+@Component("default")
 public class DefaultDeliveryFeeCalculator implements DeliveryFeeCalculator {
     
     private final HashMap<Region, Double> prices = new HashMap<>();

@@ -25,11 +25,15 @@ public class AddressController {
 
     @PostMapping
     public ResponseEntity<ResponseAddress> consultAddress(@Valid @Nonnull @RequestBody AddressRequestBody body) {
-        return new ResponseEntity<ResponseAddress>(HttpStatus.BAD_REQUEST);
+        ResponseAddress response = addressService.getResponseAddress(body.getCep());
+        
+        return new ResponseEntity<ResponseAddress>(response, HttpStatus.OK);
     }
-
+    
     @GetMapping(path = "{cep}")
     public ResponseEntity<ResponseAddress> consultAddress(@Nonnull @PathVariable String cep) {
-        return new ResponseEntity<ResponseAddress>(HttpStatus.OK);
+        ResponseAddress response = addressService.getResponseAddress(cep);
+
+        return new ResponseEntity<ResponseAddress>(response, HttpStatus.OK);
     }
 }
