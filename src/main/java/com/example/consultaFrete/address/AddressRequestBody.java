@@ -1,9 +1,10 @@
 package com.example.consultaFrete.address;
 
+import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
