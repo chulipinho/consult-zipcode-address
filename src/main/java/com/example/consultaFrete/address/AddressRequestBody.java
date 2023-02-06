@@ -16,8 +16,6 @@ public class AddressRequestBody {
         String cleanZipcode = cep.replaceAll("[^\\d]", "");
 
         this.cep = padLeftZeros(cleanZipcode, 8);
-        String p = padLeftZeros(cleanZipcode, 8);
-        System.out.println(p);
     }
 
     private String padLeftZeros(String inputString, int length) {
