@@ -1,0 +1,124 @@
+swagger: '2.0'
+info:
+  description: Aplicação REST em Spring Boot
+  version: 1.0.0
+  title: Api para consulta de fretes
+  contact:
+    name: Fellipe Machado
+    url: https://github.com/chulipinho
+    email: fellipe.luz.machado@gmail.com
+host: localhost:8080
+basePath: /
+tags:
+  - name: Consulta endereço
+    description: Address Controller
+paths:
+  /v1/consulta-endereco:
+    post:
+      tags:
+        - Consulta endereço
+      summary: Retorna um objeto de endereço com o valor do frete baseado na região
+      operationId: consultAddressUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: body
+          required: true
+          schema:
+            $ref: '#/definitions/AddressRequestBody'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseAddress'
+        '400':
+          description: Parâmetro de entrada inválido
+        '404':
+          description: Endereço não encontrado
+        '500':
+          description: Erro interno do servidor
+      deprecated: false
+  /v1/consulta-endereco/{cep}:
+    get:
+      tags:
+        - Consulta endereço
+      summary: Retorna um objeto de endereço com o valor do frete baseado na região
+      operationId: consultAddressUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: cep
+          in: path
+          description: cep
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseAddress'
+        '400':
+          description: Parâmetro de entrada inválido
+        '404':
+          description: Endereço não encontrado
+        '500':
+          description: Erro interno do servidor
+      deprecated: false
+definitions:
+  AddressRequestBody:
+    type: object
+    properties:
+      cep:
+        type: string
+    title: AddressRequestBody
+  ResponseAddress:
+    type: object
+    properties:
+      bairro:
+        type: string
+      cep:
+        type: string
+      cidade:
+        type: string
+      complemento:
+        type: string
+      estado:
+        type: string
+        enum:
+          - AM
+          - AL
+          - AC
+          - AP
+          - BA
+          - PA
+          - MT
+          - MG
+          - MS
+          - GO
+          - MA
+          - RS
+          - TO
+          - PI
+          - SP
+          - RO
+          - RR
+          - PR
+          - CE
+          - PE
+          - SC
+          - PB
+          - RN
+          - ES
+          - RJ
+          - SE
+          - DF
+      frete:
+        type: number
+        format: double
+      rua:
+        type: string
+    title: ResponseAddress
