@@ -13,7 +13,7 @@ public class AddressService {
     private final DeliveryFeeCalculator defaultDeliveryFeeCalculator;
 
     @Autowired
-    public AddressService(@Qualifier("mockViaCep") ViaCepDAO viaCepDAO, @Qualifier("default") DeliveryFeeCalculator deliveryFeeCalculator) {
+    public AddressService(@Qualifier("ViaCep") ViaCepDAO viaCepDAO, @Qualifier("default") DeliveryFeeCalculator deliveryFeeCalculator) {
         this.viaCepDAO = viaCepDAO;
         this.defaultDeliveryFeeCalculator = deliveryFeeCalculator;
     }

@@ -9,33 +9,22 @@ import lombok.Getter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
-    @JsonProperty("cep") 
     @Getter private String zipcode;
-
-    @JsonProperty("rua") @JsonAlias("logradouro") 
     @Getter private String street;
-
-    @JsonProperty("complemento") 
     @Getter private String complement;
-
-    @JsonProperty("bairro") 
     @Getter private String district;
-
-    @JsonProperty("cidade") @JsonAlias("localidade") 
     @Getter private String city;
-    
-    @JsonProperty("estado") @JsonAlias("uf") 
     @Getter private State state;
     
     public Address() {}
 
     public Address(
-        String zipcode, 
-        String street, 
-        String complement, 
-        String district, 
-        String city, 
-       String state
+        @JsonProperty("cep") String zipcode, 
+        @JsonProperty("rua") @JsonAlias("logradouro") String street, 
+        @JsonProperty("complemento") String complement, 
+        @JsonProperty("bairro") String district, 
+        @JsonProperty("cidade") @JsonAlias("localidade") String city, 
+        @JsonProperty("estado") @JsonAlias("uf") String state
     ) {
         this.zipcode = zipcode;
         this.street = street;
