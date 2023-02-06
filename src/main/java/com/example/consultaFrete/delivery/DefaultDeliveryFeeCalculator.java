@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import org.springframework.stereotype.Component;
 
+import com.example.consultaFrete.address.Address;
 import com.example.consultaFrete.types.Region;
 import com.example.consultaFrete.types.State;
 
@@ -18,10 +19,14 @@ public class DefaultDeliveryFeeCalculator implements DeliveryFeeCalculator {
         prices.put(Region.SUDESTE, 7.85);
         prices.put(Region.CENTRO_OESTE, 12.50);
         prices.put(Region.SUL, 17.30);
-    }
+    }   
 
     @Override
-    public double calculate(State state) {
+    public double calculate(Address address) {
+        return getPrice(address.getState());
+    }
+
+    private double getPrice(State state) {
         return prices.get(state.getRegion());
     }
 }

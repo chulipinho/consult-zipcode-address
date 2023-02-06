@@ -30,6 +30,6 @@ public class AddressService {
     }
 
     private double calculateDeliveryFee(Address address) {
-        return defaultDeliveryFeeCalculator.calculate(address.getState());
+        return defaultDeliveryFeeCalculator.calculate(address);
     }
 }

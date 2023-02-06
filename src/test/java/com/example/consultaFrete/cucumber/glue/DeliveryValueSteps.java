@@ -2,6 +2,7 @@ package com.example.consultaFrete.cucumber.glue;
 
 import org.junit.Assert;
 
+import com.example.consultaFrete.address.Address;
 import com.example.consultaFrete.delivery.DefaultDeliveryFeeCalculator;
 import com.example.consultaFrete.types.State;
 
@@ -21,7 +22,10 @@ public class DeliveryValueSteps {
 
     @Then("the DefaultDeliveryFeeCalculator calculate method is called")
     public void thenTheDefaultCalculateMethodIsCalled() {
-        this.deliveryFee = defaultDeliveryFeeCalculator.calculate(State.fromUF(uf));
+        final Address address = new Address();
+        address.setState(State.fromUF(uf));
+
+        this.deliveryFee = defaultDeliveryFeeCalculator.calculate(address);
     }
 
     @And("it must return {double}")

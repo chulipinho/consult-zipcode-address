@@ -6,21 +6,22 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
     @JsonProperty("cep")
-    @Getter private String zipcode;
+    @Setter @Getter private String zipcode;
     @JsonProperty("rua") 
-    @Getter private String street;
+    @Setter @Getter private String street;
     @JsonProperty("complemento")
-    @Getter private String complement;
+    @Setter @Getter private String complement;
     @JsonProperty("bairro")
-    @Getter private String district;
+    @Setter @Getter private String district;
     @JsonProperty("cidade")  
-    @Getter private String city;
+    @Setter @Getter private String city;
     @JsonProperty("estado") 
-    @Getter private State state;
+    @Setter @Getter private State state;
 
     
     public Address() {}
