@@ -11,8 +11,8 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>consultaFrete</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>consultaFrete</name>
+	<version>1.0.0</version>
+	<name>consulta-frete</name>
 	<description>Api de consulta de fretes</description>
 	<properties>
 		<java.version>11</java.version>
